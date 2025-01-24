@@ -1,6 +1,6 @@
 images/
 .venv/
-./config/config.ini
+./main/config/config.ini
 ### idea ###
 .idea/
 
