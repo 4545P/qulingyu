@@ -1,5 +1,5 @@
 images/
-config/
+#config/*
 .venv/
 ### idea ###
 .idea/
