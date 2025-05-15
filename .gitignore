@@ -1,8 +1,8 @@
 images/
 .venv/
-config/config.ini
 ### idea ###
 .idea/
 
 ### MacOS ###
 .DS_Store
+/main/config/
