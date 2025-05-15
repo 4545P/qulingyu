@@ -43,9 +43,15 @@ def login(driver: webdriver.Chrome):
         By.XPATH, "/html/body/div[2]/div/div[2]/div[1]/div/form/button"
     ).click()
 
+main_page: str = "https://qulingyu30.com/"
 
 def main():
-    main_page: str = "https://qulingyu30.com/"
+
+    # 確保 images 目錄存在
+    if not os.path.exists("images"):
+        os.makedirs("images")
+        print("[INFO] 建立 images 資料夾")
+
     opt = webdriver.ChromeOptions()
     opt.add_argument("--headless=new")
     driver = webdriver.Chrome(options=opt)
@@ -84,12 +90,12 @@ def get_page_link() -> str:
         return ""
 
     page_links = {
-        1: "https://qulingyu30.com/taotu",
-        2: "https://qulingyu30.com/wanghong",
-        3: "https://qulingyu30.com/lingyu",
-        4: "https://qulingyu30.com/laosiji",
-        5: "https://qulingyu30.com/qushipin",
-        6: "https://qulingyu30.com/qiumingshan",
+        1: f"{main_page}taotu",
+        2: f"{main_page}wanghong",
+        3: f"{main_page}lingyu",
+        4: f"{main_page}laosiji",
+        5: f"{main_page}qushipin",
+        6: f"{main_page}qiumingshan",
     }
 
     return page_links.get(choice, "")
