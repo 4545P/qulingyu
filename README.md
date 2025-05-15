@@ -1,5 +1,9 @@
 ```
 config.ini 帳號請先去網站註冊後更改成自己的
+
+[account]
+username = 帳號
+password = 密碼
 ```
 
 ```
