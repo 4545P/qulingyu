@@ -3,9 +3,6 @@ images/
 # 忽略所有 config 下的檔案
 main/config/*
 
-# 但保留 config.ini
-!main/config/config.ini
-
 .venv/
 ### idea ###
 .idea/
