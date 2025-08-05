@@ -239,7 +239,7 @@ def scrape_pages(driver, main_page: str, page_count: int, mode: str) -> tuple[li
                 continue
 
             images = driver.find_elements(By.CSS_SELECTOR, "a.thumb-srcbox")
-            print(f"[INFO] 發現 {len(images)} 張圖片")
+            print(f"[INFO] 發現 {len(images)} 套圖片")
             for image in images:
                 try:
                     img_tag = image.find_element(By.TAG_NAME, "img")
@@ -310,8 +310,8 @@ def download_resource(driver, image_link: str):
         image_link (str): 資源頁面連結
     回傳內容：無
     """
-    print(f"[INFO] 開啟資源頁面：{image_link}")
     driver.get(image_link)
+    print(f"[INFO] 開啟資源頁面：{image_link}")
     try:
         download_trigger = WebDriverWait(driver, 5).until(
             EC.element_to_be_clickable((By.XPATH, '//em[text()="下载资源"]'))
@@ -396,6 +396,7 @@ def download_image(driver, image_link: str, dir_name: str):
     回傳內容：無
     """
     driver.get(image_link)
+    print(f"[INFO] 開啟圖片頁面：{image_link}")
     driver.implicitly_wait(10)
     scroll_and_wait(driver)
     soup = BeautifulSoup(driver.page_source, "html.parser")
